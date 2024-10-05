@@ -165,3 +165,11 @@ rag/db/chroma_db/f1aad443-9fb9-432c-86ad-4ac99f5f0830/data_level0.bin
 rag/db/chroma_db/f1aad443-9fb9-432c-86ad-4ac99f5f0830/header.bin
 rag/db/chroma_db/f1aad443-9fb9-432c-86ad-4ac99f5f0830/length.bin
 rag/db/chroma_db/f1aad443-9fb9-432c-86ad-4ac99f5f0830/link_lists.bin
+rag/books/adventures_of_huckleberry_finn.txt
+rag/books/frankenstein.txt
+rag/db/chroma_db_with_metadata/chroma.sqlite3
+rag/db/chroma_db_with_metadata/3b96e99f-b245-4292-abb1-6a26bad4e5c9/data_level0.bin
+rag/db/chroma_db_with_metadata/3b96e99f-b245-4292-abb1-6a26bad4e5c9/header.bin
+rag/db/chroma_db_with_metadata/3b96e99f-b245-4292-abb1-6a26bad4e5c9/index_metadata.pickle
+rag/db/chroma_db_with_metadata/3b96e99f-b245-4292-abb1-6a26bad4e5c9/length.bin
+rag/db/chroma_db_with_metadata/3b96e99f-b245-4292-abb1-6a26bad4e5c9/link_lists.bin
