@@ -6,10 +6,10 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 load_dotenv()
 
 # Loading the model
-model = ChatOpenAI(model="gpt-4o")
+model = ChatOpenAI(model="gpt-3.5-turbo")
 
 messages = [
-    SystemMessage(content="Solve the following math problme"),
+    SystemMessage(content="Solve the following math problem"),
     HumanMessage(content="What are the days in a week")
 ]
 

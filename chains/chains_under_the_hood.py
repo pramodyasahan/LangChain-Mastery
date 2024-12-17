@@ -3,8 +3,6 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnableLambda, RunnableSequence
 from langchain_openai import ChatOpenAI
 
-from prompt_template.basic import prompt_template
-
 load_dotenv()
 
 model = ChatOpenAI(model="gpt-3.5-turbo")
@@ -14,5 +12,14 @@ prompt_template = ChatPromptTemplate.from_messages([
     ("human", "Tell me {joke_count} jokes."),
 ])
 
-
 format_prompt = RunnableLambda(lambda x: prompt_template.format_prompt(**x))
+invoke_model = RunnableLambda(lambda x: model.invoke(x.to_messages()))
+parse_output = RunnableLambda(lambda x: x.content)
+
+chain = RunnableSequence(first=format_prompt, middle=[invoke_model], last=parse_output)
+response = chain.invoke({
+    "topic": "Doctor",
+    "joke_count": 5,
+})
+
+print(response)

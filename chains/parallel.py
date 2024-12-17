@@ -4,7 +4,6 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnableParallel, RunnableLambda
 from langchain_openai import ChatOpenAI
 
-
 load_dotenv()
 
 model = ChatOpenAI(model="gpt-3.5-turbo")
@@ -54,13 +53,12 @@ pros_branch = RunnableLambda(lambda x: analyze_pros(x)) | model | StrOutputParse
 cons_branch = RunnableLambda(lambda x: analyze_cons(x)) | model | StrOutputParser()
 print(StrOutputParser())
 chain = (
-    prompt_template
-    | model
-    | StrOutputParser()
-    | RunnableParallel(branches={"pros": pros_branch, "cons": cons_branch})
-    | RunnableLambda(
-        lambda x: combine_pros_cons(x["branches"]["pros"], x["branches"]["cons"])
-    )
+        prompt_template
+        | model
+        | StrOutputParser()
+        | RunnableParallel(branches={"pros": pros_branch, "cons": cons_branch})
+        | RunnableLambda(lambda x: combine_pros_cons(x["branches"]["pros"], x["branches"]["cons"])
+                         )
 )
 
 result = chain.invoke({"product_name": "MacBook Pro M2"})

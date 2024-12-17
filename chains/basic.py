@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-model = ChatOpenAI(model="gpt-4")
+model = ChatOpenAI(model="gpt-3.5-turbo")
 
 prompt_template = ChatPromptTemplate.from_messages([
     ("system", "You are a comedian who tells jokes about {topic}"),
